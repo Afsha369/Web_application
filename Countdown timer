@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Event Countdown Timer</title>
+    <link rel="stylesheet" href="http://172.16.34.43/bootstrap/css/bootstrap.min.css">
+    <script src="http://172.16.34.43/ajax/libs/jquery/jquery.min.js"></script>
+    <script src="http://172.16.34.43/ajax/libs/popper/umd/popper.min.js"></script>
+    <script src="http://172.16.34.43/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            margin-top: 50px;
+            text-align:center;
+            background-color:gray;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            text-align:center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-success">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h2 style="color:orange;">Event Countdown Timer</h2>
+                <div id="countdown" class="countdown">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const enddate = new Date('2024-12-31T00:00:00').getTime();
+        const countdown = setInterval(() => {
+            const currentdate = new Date('2025-12-31T00:00:00').getTime();
+            const distance = enddate - currentdate;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / (1000));
+
+            document.getElementById('countdown').innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById('countdown').innerHTML = 'EXPIRED';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
