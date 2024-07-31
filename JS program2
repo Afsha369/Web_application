@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Concepts Illustration</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+</style>
+</head>
+<body>
+<div>
+    <button id="clickBtn">CLick me</button>
+    <button id="mouseoverBtn">Mouse over me</button>
+   
+   <input type="text" id="keydownInput" placeholder="Type here">
+   <input type="text" id="nameInput" placeholder="Enter Name">
+   <input type="text" id="ageInput" placeholder="Enter Age">
+   <input type="text" id="streetInput" placeholder="Enter Street">
+   <input type="text" id="cityInput" placeholder="Enter City">
+   <input type="text" id="countryInput" placeholder="Enter Country">
+   <button id="createPersonBtn">Create Person</button>
+</div>
+<script>
+
+document.getElementById("keydownInput").addEventListener("keydown",function(event){
+alert("Key pressed:"+event.key);
+});
+// Using Object Literal
+const person1 = {
+  name: 'John',
+  age: 30,
+  address: {
+    street: '123 Main St',
+    city: 'New York',
+    country: 'USA'
+  }
+};
+
+// Using Constructor Function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.address = {
+    street: '456 Park Ave',
+    city: 'Los Angeles',
+    country: 'USA'
+  };
+}
+const person2=new Person('Shasha',22)
+
+// Using Object.create()
+const person3 = Object.create(null);
+person3.name = 'Bob';
+person3.age = 40;
+person3.address = {
+  street: '789 Elm St',
+  city: 'Chicago',
+  country: 'USA'
+};
+
+console.log(person1)
+console.log(person2)
+console.log(person3)
+
+document.getElementById("createPersonBtn").addEventListener("click", function() {
+  const name = document.getElementById("nameInput").value;
+  const age = document.getElementById("ageInput").value;
+  const street = document.getElementById("streetInput").value;
+  const city = document.getElementById("cityInput").value;
+  const country = document.getElementById("countryInput").value;
+
+  const person = {
+    name,
+    age,
+    address: {
+      street,
+      city,
+      country
+    }
+  };
+
+  console.log(person);
+});
+
+const person = Object.assign({},
+  { name: document.getElementById("nameInput").value },
+  { age: document.getElementById("ageInput").value },
+  { address: {
+      street: document.getElementById("streetInput").value,
+      city: document.getElementById("cityInput").value,
+      country: document.getElementById("countryInput").value
+    }
+  }
+);
+
+
+
+
+// Different Kinds of DOM Events
+document.getElementById("clickBtn").addEventListener("click", function() {
+  alert("Button Clicked!");
+ });
+document.getElementById("mouseoverBtn").addEventListener("mouseover", function() {
+  alert("Mouse Over Button!");
+});
+
+</script>
+</body>
+</html>
