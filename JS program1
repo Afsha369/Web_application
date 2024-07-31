@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Experiment No 05</title>
+</head>
+
+<body>
+    <script>
+        console.log("String Object Methods:");
+        const string1 = "Hello World!";
+        console.log("method1: length of string1 =", string1.length);
+        console.log("method2: index of 'o' =", string1.indexOf('o'));
+        console.log("method3: uppercase =", string1.toUpperCase());
+        console.log("method4: substring =", string1.substring(0, 5));
+
+        console.log("Date Object Methods:");
+        const date1 = new Date();
+        console.log("method1: full year =", date1.getFullYear());
+        console.log("method2: month =", date1.getMonth());
+        console.log("method3: hours =", date1.getHours());
+        console.log("method4: to date string =", date1.toDateString());
+
+        console.log("Number Object Methods:");
+        const num = 123.456;
+        console.log("method1: to fixed =", num.toFixed(2));
+        console.log("method2: to string =", num.toString());
+        console.log("method3: to exponential =", num.toExponential(2));
+        const num1 = "1234.456";
+        console.log("method4: string to Int =", num2 = parseInt(num1));
+
+    </script>
+</body>
+
+</html>
