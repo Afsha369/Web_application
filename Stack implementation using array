@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>array_as_stack</title>
+<script>
+  // Initialize the stack with some elements
+  var my_stack = new Array();
+
+  // Alert the size of the stack
+  alert("size of my array is: " + my_stack.length);
+my_stack.push(10);
+my_stack.push(20);
+my_stack.push(30);
+my_stack.push(40);
+  // Log the contents of the stack
+  alert("contents of my_stack are: " + my_stack);
+
+  // Push an element onto the stack
+  my_stack.push(50);
+
+  // Log the size of the stack after pushing
+  alert("size of my_stack after single push op is: " + my_stack.length);
+
+  // Log the contents of the stack after pushing
+  alert("content of my_stack are: " + my_stack);
+
+  // Pop an element from the stack
+  var popped_item = my_stack.pop();
+
+  // Alert the popped element
+  alert("the popped element is: " + popped_item);
+
+  // Pop an element from the stack
+  var popped_item2 = my_stack.pop();
+
+  // Alert the popped element
+  alert("the popped element is: " + popped_item2);
+
+  // Pop an element from the stack
+  var popped_item3 = my_stack.pop();
+
+  // Alert the popped element
+  alert("the popped element is: " + popped_item3);
+
+  // Pop an element from the stack
+  var popped_item4 = my_stack.pop();
+
+  // Alert the popped element
+  alert("the popped element is: " + popped_item4);
+
+  // Pop an element from the stack
+  var popped_item5 = my_stack.pop();
+
+  // Alert the popped element
+  alert("the popped element is: " + popped_item5);
+
+
+  // Log the contents of the stack after popping
+  alert("content of my_stack are: " + my_stack);
+
+  // Define a function to check if the stack is empty
+  Array.prototype.isEmpty = function () {
+    if (my_stack.length <= 0) {
+      alert("stack is empty");
+    }
+  }
+
+  // Create a new stack and call the isEmpty function
+  var my_stack = [1, 2];
+  my_stack.isEmpty();
+
+  // Define a function to get the top element of the stack
+  Array.prototype.topelement = function () {
+    alert("the top element of the stack is: " + this[this.length - 1]);
+  }
+
+  // Call the topelement function to get the top element of the stack
+  my_stack.topelement();
+
+  // Define a function to check if stack underflow occurs when popping
+  Array.prototype.isUnderFlow = function () {
+    if (this.length == 0) {
+      alert("you can't pop");
+      return true;
+    } else
+      return false;
+  }
+
+  // Pop elements from the stack until underflow occurs
+  while (!my_stack.isUnderFlow()) {
+    my_stack.pop(my_stack.length - 1)
+  }
+
+  // Create an empty array and call the isEmpty function
+  var arr = [];
+  Array.prototype.isEmpty = function () {
+    if (arr.length <= 0) {
+      alert("stack is empty");
+    }
+  }
+  arr.isEmpty();
+</script>
+</head>
+<body>
+</body>
+</html>
